@@ -1,0 +1,63 @@
+/* ── PAGE HERO BANNER ───────────────────────────────────────────────── */
+.page-hero {
+  padding: 140px 6vw 80px;
+  background: var(--black);
+  border-bottom: 1px solid rgba(168,159,212,0.2);
+  position: relative; overflow: hidden;
+}
+.page-hero::before {
+  content: '';
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    radial-gradient(1px 1px at 10% 30%, rgba(168,159,212,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 85% 15%, rgba(77,255,170,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 60% 70%, rgba(168,159,212,0.25) 0%, transparent 100%),
+    radial-gradient(600px 400px at 80% 50%, rgba(78,74,128,0.07) 0%, transparent 70%);
+}
+.page-hero-label {
+  font-size: 9px; letter-spacing: 4px; text-transform: uppercase;
+  color: var(--neon); margin-bottom: 18px;
+  display: flex; align-items: center; gap: 12px;
+}
+.page-hero-label::before { content: '★'; font-size: 7px; }
+.page-hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(72px, 14vw, 160px);
+  line-height: 0.88; letter-spacing: 4px;
+  color: var(--white); position: relative; z-index: 1;
+}
+.page-hero-title em { color: var(--purple); font-style: normal; }
+.page-hero-sub {
+  font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--dim); margin-top: 20px; position: relative; z-index: 1;
+  max-width: 600px; line-height: 1.8;
+}
+
+/* ── GIANT BAND ─────────────────────────────────────────────────────── */
+.giant-band { position: relative; overflow: hidden; background: var(--black); border-top: 1px solid rgba(168,159,212,0.08); border-bottom: 1px solid rgba(168,159,212,0.08); }
+.giant-text {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(80px, 16vw, 160px); line-height: 0.88; letter-spacing: 4px;
+  white-space: nowrap; padding: 24px 40px; display: block;
+  -webkit-text-stroke: 2px var(--purple); color: transparent;
+  transition: color .2s, -webkit-text-stroke .2s;
+}
+.giant-text:hover { color: var(--purple); }
+.giant-text em { color: var(--neon); font-style: normal; -webkit-text-stroke: 0; }
+
+/* ── QUOTE / MANIFESTO STRIP ────────────────────────────────────────── */
+.quote-section {
+  padding: 100px 6vw; text-align: center;
+  background: var(--near);
+  border-top: 1px solid rgba(168,159,212,0.22);
+  border-bottom: 1px solid rgba(168,159,212,0.22);
+  position: relative; overflow: hidden;
+}
+.quote-section::before {
+  content: '❝'; position: absolute; top: 20px; left: 50%; transform: translateX(-50%);
+  font-size: 180px; line-height: 1; color: rgba(168,159,212,0.07); font-family: serif; pointer-events: none;
+}
+.quote-text { font-size: clamp(18px, 2.8vw, 26px); line-height: 1.6; font-weight: 300; color: var(--white); max-width: 700px; margin: 0 auto 28px; position: relative; z-index: 1; }
+.quote-open, .quote-close { color: var(--purple); font-family: serif; font-size: 1.3em; line-height: 0; vertical-align: -0.3em; }
+.quote-credit { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--neon); position: relative; z-index: 1; }
+.quote-credit span { color: var(--faint); }

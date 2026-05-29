@@ -1,0 +1,20 @@
+:root {
+  --black:   #000000;
+  --near:    #090810;
+  --coal:    #0e0d14;
+  --surface: #141320;
+
+  --purple:  #a89fd4;
+  --pu-hot:  #c0b8e8;
+  --pu-mid:  #8880b8;
+  --pu-low:  #4e4a80;
+  --pu-dim:  rgba(168,159,212,0.08);
+
+  --neon:    #4dffaa;
+  --neon-mid:#2ec48a;
+  --neon-dim:rgba(77,255,170,0.07);
+
+  --white:   #f0ecff;
+  --dim:     rgba(240,236,255,0.72);
+  --faint:   rgba(240,236,255,0.38);
+}

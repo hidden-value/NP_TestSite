@@ -1,0 +1,255 @@
+/* ── COMING SOON HOME HERO ──────────────────────────────────────────── */
+.cs-hero {
+  min-height: 100vh; padding-top: 82px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; position: relative; overflow: hidden; background: var(--black);
+}
+.cs-hero::before {
+  content: ''; position: absolute; inset: 0; z-index: 0;
+  background-image:
+    radial-gradient(1px 1px at 12% 18%, rgba(168,159,212,0.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 88% 12%, rgba(168,159,212,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 35% 55%, rgba(168,159,212,0.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 72% 70%, rgba(77,255,170,0.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 20% 82%, rgba(168,159,212,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 93% 48%, rgba(77,255,170,0.25) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 50% 25%, rgba(228,224,244,0.2) 0%, transparent 100%),
+    radial-gradient(1px 1px at 6% 66%, rgba(77,255,170,0.2) 0%, transparent 100%),
+    radial-gradient(900px 600px at 50% 50%, rgba(78,74,128,0.08) 0%, transparent 70%);
+}
+.cs-badge {
+  font-size: 9px; letter-spacing: 5px; text-transform: uppercase;
+  color: var(--neon); position: relative; z-index: 1; margin-bottom: 28px;
+  border: 1px solid rgba(77,255,170,0.3); padding: 6px 20px;
+  display: inline-flex; align-items: center; gap: 12px;
+  animation: fadein .5s ease both;
+}
+.cs-badge::before, .cs-badge::after { content: '★'; font-size: 7px; }
+.cs-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(80px, 18vw, 200px); line-height: 0.82; letter-spacing: 4px;
+  position: relative; z-index: 1; animation: fadein2 .6s .1s ease both;
+}
+.cs-logo .line1 { color: var(--white); display: block; }
+.cs-logo .line2 { color: var(--purple); display: block; }
+.cs-logo .line3 { color: rgba(240,236,255,0.3); display: block; font-size: 0.5em; letter-spacing: 12px; }
+.cs-tagline {
+  font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+  color: var(--dim); margin-top: 36px; position: relative; z-index: 1;
+  animation: fadein3 .7s .2s ease both; max-width: 540px; line-height: 1.8;
+}
+.cs-tagline em { color: var(--purple); font-style: normal; }
+
+/* ── EMAIL CAPTURE FORM ─────────────────────────────────────────────── */
+.cs-form {
+  display: flex; gap: 0; margin-top: 44px; max-width: 480px; width: 100%; position: relative; z-index: 1;
+  animation: fadein3 .8s .4s ease both;
+}
+.cs-form input {
+  flex: 1; background: rgba(14,13,20,0.7); border: 1px solid rgba(168,159,212,0.3);
+  border-right: none; padding: 14px 20px; font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px; color: var(--white); outline: none; letter-spacing: 1px;
+  backdrop-filter: blur(8px);
+}
+.cs-form input::placeholder { color: var(--faint); }
+.cs-form input:focus { border-color: var(--purple); }
+.cs-form button { flex-shrink: 0; }
+.cs-form-note {
+  font-size: 8px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--faint); margin-top: 16px; position: relative; z-index: 1;
+  animation: fadein3 1s .5s ease both;
+}
+.cs-form-note em { color: var(--purple); font-style: normal; }
+
+/* ── COMING SOON: WHAT'S DROPPING ───────────────────────────────────── */
+.cs-drops {
+  padding: 80px 6vw; background: var(--near);
+  border-top: 1px solid rgba(168,159,212,0.15);
+  border-bottom: 1px solid rgba(168,159,212,0.15);
+}
+.section-label {
+  font-size: 9px; letter-spacing: 4px; text-transform: uppercase;
+  color: var(--neon); margin-bottom: 40px;
+  display: flex; align-items: center; gap: 14px;
+}
+.section-label::after { content: ''; flex: 1; height: 1px; background: rgba(168,159,212,0.15); }
+.drops-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(168,159,212,0.1); border: 1px solid rgba(168,159,212,0.1); }
+.drop-card {
+  background: var(--coal); padding: 40px 36px;
+  display: flex; flex-direction: column; gap: 12px;
+  position: relative; overflow: hidden;
+  transition: background .2s;
+}
+.drop-card:hover { background: var(--surface); }
+.drop-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--pu-low), var(--purple), var(--neon));
+}
+.drop-status {
+  font-size: 8px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--neon); margin-bottom: 4px;
+}
+.drop-status.purple { color: var(--purple); }
+.drop-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 56px; letter-spacing: 3px; color: var(--white);
+  line-height: 1; margin-bottom: 4px;
+}
+.drop-tagline { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--dim); margin-bottom: 16px; }
+.drop-body { font-size: 11.5px; line-height: 1.9; color: var(--dim); max-width: 380px; flex: 1; }
+.drop-meta {
+  display: flex; gap: 14px; margin-top: 24px; padding-top: 20px;
+  border-top: 1px solid rgba(168,159,212,0.12);
+  font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--faint);
+}
+.drop-meta em { color: var(--neon); font-style: normal; }
+.drop-link {
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--purple); text-decoration: none; margin-top: 20px;
+  display: inline-flex; align-items: center; gap: 8px; transition: gap .15s;
+  align-self: flex-start;
+}
+.drop-link:hover { gap: 14px; color: var(--neon); }
+
+/* ── ABOUT: STORY GRID ──────────────────────────────────────────────── */
+.about-story {
+  padding: 80px 6vw; background: var(--near);
+  border-bottom: 1px solid rgba(168,159,212,0.15);
+}
+.story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: flex-start; }
+.story-label { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: var(--neon); margin-bottom: 24px; }
+.story-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(44px, 6vw, 76px); line-height: 0.92; letter-spacing: 2px;
+  color: var(--white); margin-bottom: 32px;
+}
+.story-title em { color: var(--purple); font-style: normal; }
+.story-body { font-size: 12.5px; line-height: 2; color: var(--dim); font-weight: 300; }
+.story-body p { margin-bottom: 18px; }
+.story-body p:last-child { margin-bottom: 0; }
+.story-body em { color: var(--purple); font-style: normal; }
+
+/* ── ABOUT: VALUES ──────────────────────────────────────────────────── */
+.values { padding: 80px 6vw; background: var(--black); border-bottom: 1px solid rgba(168,159,212,0.15); }
+.values-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(168,159,212,0.1); border: 1px solid rgba(168,159,212,0.1); margin-top: 40px; }
+.value-tile { background: var(--coal); padding: 40px 32px; }
+.value-num { font-family: 'Bebas Neue', sans-serif; font-size: 40px; color: rgba(168,159,212,0.18); line-height: 1; margin-bottom: 14px; }
+.value-title { font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--white); margin-bottom: 12px; }
+.value-body { font-size: 11px; line-height: 1.9; color: var(--dim); }
+
+/* ── ABOUT: WORKSHOP INFO ───────────────────────────────────────────── */
+.workshop {
+  padding: 100px 6vw; background: var(--black);
+  text-align: center; position: relative; overflow: hidden;
+  border-bottom: 1px solid rgba(168,159,212,0.15);
+}
+.workshop::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    radial-gradient(1px 1px at 25% 30%, rgba(168,159,212,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 75% 50%, rgba(77,255,170,0.25) 0%, transparent 100%),
+    radial-gradient(500px 300px at 50% 50%, rgba(78,74,128,0.06) 0%, transparent 70%);
+}
+.workshop-label { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: var(--neon); margin-bottom: 18px; position: relative; z-index: 1; }
+.workshop-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(56px, 10vw, 110px); line-height: 0.9; letter-spacing: 4px;
+  color: var(--white); margin-bottom: 16px; position: relative; z-index: 1;
+}
+.workshop-title em { color: var(--purple); font-style: normal; }
+.workshop-sub { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--dim); position: relative; z-index: 1; margin-bottom: 0; }
+
+/* ── BETA: STATUS BAR ───────────────────────────────────────────────── */
+.beta-status {
+  background: var(--coal);
+  border-bottom: 1px solid rgba(168,159,212,0.22);
+  padding: 24px 6vw;
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+}
+.status-row { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+.status-pill {
+  font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+  border: 1px solid rgba(77,255,170,0.5); color: var(--neon);
+  padding: 5px 14px; display: inline-flex; align-items: center; gap: 8px;
+}
+.status-pill::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--neon);
+  animation: pulse 1.6s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+.status-info { font-size: 10px; letter-spacing: 1.5px; color: var(--dim); }
+.status-info em { color: var(--purple); font-style: normal; }
+.status-count { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--white); letter-spacing: 2px; line-height: 1; }
+.status-count-label { font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: var(--faint); margin-top: 4px; display: block; }
+
+/* ── BETA: SIGNUP FORM ──────────────────────────────────────────────── */
+.beta-form-wrap {
+  padding: 80px 6vw; background: var(--near);
+}
+.beta-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: flex-start; }
+.beta-form-side .story-label { margin-bottom: 24px; }
+.beta-form {
+  background: var(--coal); border: 1px solid rgba(168,159,212,0.28);
+  padding: 36px; position: relative;
+}
+.beta-form::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--pu-low), var(--purple), var(--neon), var(--purple), var(--pu-low));
+}
+.beta-form-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px; letter-spacing: 2px; color: var(--white);
+  margin-bottom: 6px;
+}
+.beta-form-sub { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--faint); margin-bottom: 28px; }
+.field { margin-bottom: 18px; }
+.field-label { font-size: 8px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--purple); margin-bottom: 6px; display: block; }
+.field input, .field select {
+  width: 100%; background: var(--near); border: 1px solid rgba(168,159,212,0.22);
+  padding: 11px 14px; font-family: 'IBM Plex Mono', monospace; font-size: 11px;
+  color: var(--white); outline: none; letter-spacing: 1px;
+  transition: border-color .15s; -webkit-appearance: none; appearance: none; cursor: crosshair;
+}
+.field input:focus, .field select:focus { border-color: var(--purple); }
+.field input::placeholder { color: var(--faint); }
+.field select { background-image: linear-gradient(45deg, transparent 50%, var(--purple) 50%), linear-gradient(135deg, var(--purple) 50%, transparent 50%); background-position: calc(100% - 18px) 50%, calc(100% - 12px) 50%; background-size: 6px 6px; background-repeat: no-repeat; padding-right: 36px; }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.field-checkbox { display: flex; align-items: flex-start; gap: 12px; margin-top: 24px; padding: 16px; border: 1px solid rgba(168,159,212,0.15); background: rgba(0,0,0,0.2); cursor: pointer; }
+.field-checkbox input { width: 14px; height: 14px; margin-top: 1px; cursor: crosshair; accent-color: var(--purple); flex-shrink: 0; }
+.field-checkbox-text { font-size: 10px; line-height: 1.7; color: var(--dim); }
+.field-checkbox-text em { color: var(--purple); font-style: normal; }
+.beta-submit-btn { width: 100%; margin-top: 24px; }
+
+/* ── BETA: WHAT TESTERS GET ─────────────────────────────────────────── */
+.beta-perks { padding: 80px 6vw; background: var(--black); }
+.perks-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1px; background: rgba(168,159,212,0.1); border: 1px solid rgba(168,159,212,0.1); margin-top: 40px; }
+.perk-tile { background: var(--coal); padding: 32px 28px; }
+.perk-icon { font-size: 18px; color: var(--neon); margin-bottom: 10px; display: block; }
+.perk-title { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--white); margin-bottom: 8px; }
+.perk-body { font-size: 11px; line-height: 1.85; color: var(--dim); }
+.perk-tile.what-we-need .perk-icon { color: var(--purple); }
+
+/* ── FOOTER ─────────────────────────────────────────────────────────── */
+footer { background: var(--black); border-top: 1px solid rgba(168,159,212,0.28); padding: 36px 2.5rem 24px; }
+.footer-main { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid rgba(168,159,212,0.07); }
+.footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 3px; text-transform: lowercase; }
+.footer-logo em { color: var(--purple); font-style: normal; }
+.footer-tagline { font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--faint); margin-top: 5px; }
+.footer-socials { display: flex; gap: 20px; align-items: center; }
+.footer-socials a { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--faint); text-decoration: none; transition: color .15s; }
+.footer-socials a:hover { color: var(--purple); }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; }
+.footer-copy { font-size: 9px; letter-spacing: 1px; color: var(--faint); text-transform: uppercase; }
+.footer-legal { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--faint); text-decoration: none; }
+.footer-legal:hover { color: var(--purple); }
+
+/* ── SUCCESS TOAST ──────────────────────────────────────────────────── */
+.toast {
+  position: fixed; bottom: 32px; right: 32px; z-index: 9998;
+  background: var(--coal); border: 1px solid var(--neon); color: var(--white);
+  padding: 18px 24px; max-width: 340px;
+  transform: translateY(140%); transition: transform .35s ease;
+  font-size: 11px; letter-spacing: 1px; line-height: 1.6;
+}
+.toast.show { transform: translateY(0); }
+.toast strong { color: var(--neon); display: block; font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 2px; margin-bottom: 6px; }

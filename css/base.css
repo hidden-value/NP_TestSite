@@ -1,0 +1,21 @@
+/* ── BASE ───────────────────────────────────────────────────────────── */
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 300;
+  overflow-x: hidden;
+  cursor: crosshair;
+}
+
+/* ── SCROLLBAR ──────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--black); }
+::-webkit-scrollbar-thumb { background: var(--pu-low); }
+
+/* ── ANIMATIONS ─────────────────────────────────────────────────────── */
+@keyframes fadein  { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:none; } }
+@keyframes fadein2 { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:none; } }
+@keyframes fadein3 { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:none; } }
+@keyframes tickerscroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes linepulse { 0%,100%{ opacity:.3; } 50%{ opacity:1; } }
