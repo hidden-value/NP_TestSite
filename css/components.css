@@ -26,10 +26,10 @@ nav {
 .nav-buy {
   font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
   border: 1px solid var(--purple); color: var(--purple);
-  padding: 6px 16px; background: none;
-  font-family: 'IBM Plex Mono', monospace; transition: all .15s;
+  padding: 7px 18px; background: rgba(168,159,212,0.04);
+  font-family: 'IBM Plex Mono', monospace; font-weight: 700; transition: all .18s;
 }
-.nav-buy:hover { background: var(--purple); color: var(--black); }
+.nav-buy:hover { background: var(--purple); color: var(--black); box-shadow: 0 0 18px rgba(168,159,212,0.45); }
 
 /* ── TICKERS ────────────────────────────────────────────────────────── */
 .top-ticker {
@@ -66,17 +66,30 @@ nav {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
   background: var(--purple); color: var(--black);
-  border: none; padding: 14px 38px; font-weight: 700; transition: background .15s;
+  border: none; padding: 15px 40px; font-weight: 700;
+  transition: background .18s, box-shadow .18s, transform .18s;
+  box-shadow: 0 0 0 rgba(168,159,212,0);
 }
-.cta-primary:hover { background: var(--pu-hot); }
+.cta-primary:hover {
+  background: var(--pu-hot);
+  box-shadow: 0 8px 30px rgba(168,159,212,0.4);
+  transform: translateY(-2px);
+}
+.cta-primary:active { transform: translateY(0); }
 .cta-outline {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
-  background: none; color: var(--neon);
-  border: 1px solid rgba(77,255,170,0.3);
-  padding: 14px 38px; transition: all .15s;
+  background: rgba(77,255,170,0.03); color: var(--neon);
+  border: 1px solid rgba(77,255,170,0.4);
+  padding: 15px 40px; font-weight: 700;
+  transition: all .18s;
 }
-.cta-outline:hover { background: rgba(77,255,170,0.07); border-color: var(--neon); }
+.cta-outline:hover {
+  background: rgba(77,255,170,0.1); border-color: var(--neon);
+  box-shadow: 0 8px 30px rgba(77,255,170,0.22);
+  transform: translateY(-2px);
+}
+.cta-outline:active { transform: translateY(0); }
 
 /* ── PLUGIN MOCKUP ──────────────────────────────────────────────────── */
 .hero-plugin {

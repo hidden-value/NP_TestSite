@@ -19,3 +19,17 @@ body {
 @keyframes fadein3 { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:none; } }
 @keyframes tickerscroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @keyframes linepulse { 0%,100%{ opacity:.3; } 50%{ opacity:1; } }
+
+/* Slow drifting starfield — two layers move in opposite diagonals for parallax */
+@keyframes drift-a { from { transform: translate3d(0,0,0); } to { transform: translate3d(-40px,-30px,0); } }
+@keyframes drift-b { from { transform: translate3d(0,0,0); } to { transform: translate3d(35px,25px,0); } }
+/* Soft breathing glow behind the logo */
+@keyframes glowpulse { 0%,100%{ opacity:.5; transform:translate(-50%,-50%) scale(1); } 50%{ opacity:.9; transform:translate(-50%,-50%) scale(1.12); } }
+/* Animated gradient sweep for the accent on the wordmark + badge */
+@keyframes hueshift { 0%{ background-position:0% 50%; } 100%{ background-position:200% 50%; } }
+/* Twinkle for accent stars */
+@keyframes twinkle { 0%,100%{ opacity:.25; transform:scale(.85); } 50%{ opacity:1; transform:scale(1.15); } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; }
+}
