@@ -5,6 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>null.po1nt audio — Launching 2026</title>
   <meta name="description" content="null.point audio — precision audio plugins and hardware. Launching 2026. Join the early access list.">
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="theme-color" content="#000000">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://nullpoint.audio/">
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="null.point audio">
+  <meta property="og:title" content="null.po1nt audio — Launching 2026">
+  <meta property="og:description" content="Precision audio plugins and hardware. Launching 2026. Join the early access list.">
+  <meta property="og:url" content="https://nullpoint.audio/">
+  <meta property="og:image" content="https://nullpoint.audio/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="null.po1nt audio — Launching 2026">
+  <meta name="twitter:description" content="Precision audio plugins and hardware. Launching 2026. Join the early access list.">
+  <meta name="twitter:image" content="https://nullpoint.audio/og-image.png">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/tokens.css">
@@ -14,8 +30,13 @@
   <link rel="stylesheet" href="css/pages.css">
   <link rel="stylesheet" href="css/responsive.css">
   <style>
-    .reveal { opacity:0; transform:translateY(28px); transition:opacity .55s ease,transform .55s ease; }
-    .reveal.revealed { opacity:1; transform:none; }
+    /* Progressive enhancement: content is visible by default.
+       Only hide+animate when JS confirms it's running and IntersectionObserver exists. */
+    .js-reveal .reveal { opacity:0; transform:translateY(28px); transition:opacity .55s ease,transform .55s ease; }
+    .js-reveal .reveal.revealed { opacity:1; transform:none; }
+    @media (prefers-reduced-motion: reduce) {
+      .js-reveal .reveal { opacity:1 !important; transform:none !important; transition:none; }
+    }
     .nav-center a.active { color:var(--white); }
   </style>
 </head>
@@ -59,7 +80,7 @@
   <p class="cs-tagline">Precision audio instruments — built for producers who care about <em>every detail</em>.<br>Plugins. Hardware. <em>No subscriptions, ever.</em></p>
 
   <form class="cs-form" autocomplete="on">
-    <input type="email" placeholder="your@email.com — get notified at launch" required>
+    <input type="email" name="email" aria-label="Email address" placeholder="your@email.com" required>
     <button type="submit" class="cta-primary">Notify Me ★</button>
   </form>
   <p class="cs-form-note">★ One email at launch. No spam, no newsletters. <em>Promise.</em></p>

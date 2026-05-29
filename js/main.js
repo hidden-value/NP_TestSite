@@ -11,19 +11,44 @@
   });
 })();
 
-/* ── SCROLL-REVEAL ──────────────────────────────────────────────────── */
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('revealed');
-      revealObserver.unobserve(entry.target);
+/* ── SCROLL-REVEAL (progressive enhancement) ────────────────────────── */
+(function () {
+  const els = document.querySelectorAll('.drop-card, .value-tile, .perk-tile, .quote-section');
+  const supportsObserver = 'IntersectionObserver' in window;
+  const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Only opt into the hide-then-animate behaviour when we can reliably reveal again.
+  if (!supportsObserver || reduceMotion) return; // content stays visible (CSS default)
+
+  document.documentElement.classList.add('js-reveal');
+  els.forEach(el => el.classList.add('reveal'));
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -8% 0px' });
+
+  els.forEach(el => {
+    // Reveal anything already in (or above) the viewport on load immediately — no waiting.
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+      el.classList.add('revealed');
+    } else {
+      revealObserver.observe(el);
     }
   });
-}, { threshold: 0.1 });
-document.querySelectorAll('.drop-card, .value-tile, .perk-tile, .quote-section').forEach(el => {
-  el.classList.add('reveal');
-  revealObserver.observe(el);
-});
+
+  // Safety net: guarantee everything is visible within 1.2s even if the observer never fires.
+  setTimeout(() => {
+    els.forEach(el => {
+      if (!el.classList.contains('revealed')) el.classList.add('revealed');
+    });
+  }, 1200);
+})();
 
 /* ── CURSOR GLOW ────────────────────────────────────────────────────── */
 const glow = document.createElement('div');
