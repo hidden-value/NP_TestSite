@@ -55,7 +55,8 @@
 .cs-logo .line3 {
   color: rgba(240,236,255,0.4); display: block;
   font-size: 0.34em; letter-spacing: 0.42em;
-  margin-top: 0.18em; padding-left: 0.42em; /* offset so letter-spacing stays visually centered */
+  margin-top: 0.18em;
+  /* centered by text-align on .cs-logo; no horizontal offset (measured centered at all widths) */
 }
 .cs-tagline {
   font-size: 12px; letter-spacing: 4px; text-transform: uppercase;
