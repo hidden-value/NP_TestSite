@@ -3,12 +3,40 @@
 /* ── ACTIVE NAV LINK ────────────────────────────────────────────────── */
 (function () {
   const page = location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-center a').forEach(link => {
+  document.querySelectorAll('.nav-center a, .menu-links a').forEach(link => {
     const href = link.getAttribute('href');
     if (href === page || (page === '' && href === 'index.html')) {
       link.classList.add('active');
     }
   });
+})();
+
+/* ── FULL-SCREEN MENU OVERLAY ───────────────────────────────────────── */
+(function () {
+  const trigger = document.querySelector('.menu-trigger');
+  const overlay = document.getElementById('menu-overlay');
+  const closeBtn = document.querySelector('.menu-close');
+  if (!trigger || !overlay) return;
+
+  function open() {
+    overlay.classList.add('open');
+    document.body.classList.add('menu-open');
+    overlay.setAttribute('aria-hidden', 'false');
+    trigger.setAttribute('aria-expanded', 'true');
+  }
+  function close() {
+    overlay.classList.remove('open');
+    document.body.classList.remove('menu-open');
+    overlay.setAttribute('aria-hidden', 'true');
+    trigger.setAttribute('aria-expanded', 'false');
+  }
+
+  trigger.addEventListener('click', open);
+  if (closeBtn) closeBtn.addEventListener('click', close);
+  // Close when a menu link is tapped (so same-page anchors work + nav feels right)
+  overlay.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+  // Close on Escape
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && overlay.classList.contains('open')) close(); });
 })();
 
 /* ── SCROLL-REVEAL (progressive enhancement) ────────────────────────── */

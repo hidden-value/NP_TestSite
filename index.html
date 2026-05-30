@@ -43,7 +43,10 @@
 <body>
 
 <nav>
-  <a href="index.html" class="logo">null.<em>po1nt</em></a>
+  <a href="index.html" class="logo" aria-label="null.point audio home">
+    <span class="logo-tile"><img src="assets/logo-burst.png" alt="null.point audio"></span>
+    <span class="logo-word">null.<em>po1nt</em></span>
+  </a>
   <ul class="nav-center">
     <li><a href="index.html">Home</a></li>
     <li><span class="nav-star">★</span></li>
@@ -53,8 +56,33 @@
   </ul>
   <div class="nav-right">
     <a href="beta.html"><button class="nav-buy">Join Beta</button></a>
+    <button class="menu-trigger" aria-label="Open menu" aria-expanded="false" aria-controls="menu-overlay">
+      menu <span class="bars"><span></span><span></span><span></span></span>
+    </button>
   </div>
 </nav>
+
+<!-- ── FULL-SCREEN MENU OVERLAY ──────────────────────────────────────── -->
+<div class="menu-overlay" id="menu-overlay" aria-hidden="true">
+  <div class="menu-overlay-head">
+    <span class="menu-overlay-label">menu</span>
+    <button class="menu-close" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 5l14 14M19 5L5 19"/></svg>
+    </button>
+  </div>
+  <ul class="menu-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="beta.html">Beta</a></li>
+  </ul>
+  <a href="beta.html" class="menu-account">Join the Beta</a>
+  <div class="menu-overlay-footer">
+    <a href="https://instagram.com/nullpoint.audio" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://x.com/nullpointaudio" target="_blank" rel="noopener">X / Twitter</a>
+    <a href="https://youtube.com/@nullpointaudio" target="_blank" rel="noopener">YouTube</a>
+    <a href="https://discord.gg/nullpoint" target="_blank" rel="noopener">Discord</a>
+  </div>
+</div>
 
 <div class="top-ticker">
   <div class="top-ticker-inner">
@@ -72,6 +100,7 @@
 <!-- ── HERO ──────────────────────────────────────────────────────────── -->
 <section class="cs-hero">
   <div class="cs-glow"></div>
+  <img class="cs-scope" src="assets/logo-oscilloscope.png" alt="" aria-hidden="true">
   <div class="cs-badge">Launching 2026</div>
   <div class="cs-logo">
     <span class="line1">NULL.</span>

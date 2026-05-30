@@ -1,6 +1,6 @@
 /* ── COMING SOON HOME HERO ──────────────────────────────────────────── */
 .cs-hero {
-  min-height: 100vh; padding-top: 82px;
+  min-height: calc(100vh - 86px); padding-top: 40px; padding-bottom: 60px;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   text-align: center; position: relative; overflow: hidden; background: var(--black);
 }
@@ -328,3 +328,17 @@ footer { background: var(--black); border-top: 1px solid rgba(168,159,212,0.28);
 /* ── BOLDER GIANT BAND ──────────────────────────────────────────────── */
 .giant-text { -webkit-text-stroke: 2.5px var(--purple); }
 .giant-text em { text-shadow: 0 0 40px rgba(77,255,170,0.4); }
+
+/* ── OSCILLOSCOPE LOGO WATERMARK (brand presence in hero) ───────────── */
+.cs-hero .cs-scope {
+  position: absolute; right: -4%; top: 50%; transform: translateY(-50%);
+  width: 46vw; max-width: 620px; opacity: 0.05; z-index: 0; pointer-events: none;
+  filter: grayscale(0.2);
+}
+@media (max-width: 980px) { .cs-hero .cs-scope { display: none; } }
+
+/* ── ROUNDED PANEL (FabFilter dropdown-card style) ──────────────────── */
+.np-panel {
+  background: var(--coal); border: 1px solid rgba(168,159,212,0.2);
+  border-radius: 16px; padding: 28px;
+}
