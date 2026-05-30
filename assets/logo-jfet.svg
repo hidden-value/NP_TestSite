@@ -1,25 +1,44 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" fill="none">
-  <defs>
-    <radialGradient id="g" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#a89fd4" stop-opacity="0.30"/>
-      <stop offset="55%" stop-color="#a89fd4" stop-opacity="0.06"/>
-      <stop offset="100%" stop-color="#a89fd4" stop-opacity="0"/>
-    </radialGradient>
-    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.4"/></filter>
-  </defs>
-  <circle cx="120" cy="120" r="100" fill="url(#g)"/>
-  <circle cx="120" cy="120" r="83.3" stroke="#a89fd4" stroke-width="9.0" opacity="0.22" filter="url(#soft)"/>
-  <circle cx="120" cy="120" r="83.3" stroke="#c5beea" stroke-width="2.2"/>
-  <g stroke="#c5beea" stroke-width="5.7" stroke-linecap="round">
-    <line x1="138.4" y1="24.2" x2="138.4" y2="215.8"/>
-    <line x1="42.6" y1="120.0" x2="126.7" y2="120.0"/>
-    <line x1="138.4" y1="24.2" x2="138.4" y2="41.2"/>
-    <line x1="138.4" y1="41.2" x2="202.2" y2="41.2"/>
-    <line x1="138.4" y1="198.8" x2="138.4" y2="215.8"/>
-    <line x1="138.4" y1="198.8" x2="202.2" y2="198.8"/>
+  <!-- null.point audio — JFET emblem, 1:1 from Figma desktop wallpaper (node 54:252).
+       Rendered in white (semi-transparent) so it reads as engraved on dark. -->
+  <g stroke="#ffffff" fill="none" stroke-linecap="round">
+    <!-- concentric ring glows (subtle, radiating outward) -->
+    <g stroke="#ffffff" opacity="0.06">
+      <circle cx="120" cy="120" r="144.44"/>
+      <circle cx="120" cy="120" r="133"/>
+      <circle cx="120" cy="120" r="122"/>
+    </g>
+    <!-- main ring -->
+    <circle cx="120" cy="120" r="100" stroke-width="2.2" opacity="0.92"/>
+    <!-- crosshair axes through centre -->
+    <g stroke-width="1.4" opacity="0.5">
+      <line x1="20" y1="120" x2="220" y2="120"/>
+      <line x1="120" y1="20" x2="120" y2="220"/>
+    </g>
+    <!-- centre halo + dot -->
+    <circle cx="120.86" cy="118.29" r="22.22" stroke-width="1" opacity="0.3"/>
+    <circle cx="121.27" cy="117.84" r="5.56" fill="#ffffff" stroke="none" opacity="0.9"/>
+    <!-- JFET symbol (offset right of centre, exactly per design) -->
+    <g stroke-width="3" opacity="0.95">
+      <!-- gate channel: long outer bar + shorter inner bar -->
+      <line x1="142.15" y1="5"     x2="142.15" y2="235"/>
+      <line x1="128.09" y1="40.78" x2="128.09" y2="199.22"/>
+      <!-- gate lead (horizontal, into channel) -->
+      <line x1="27.15"  y1="120"   x2="128.09" y2="120"/>
+      <!-- top drain leg -->
+      <line x1="142.15" y1="5"     x2="142.15" y2="25.44"/>
+      <line x1="142.15" y1="25.44" x2="218.82" y2="25.44"/>
+      <!-- bottom source leg -->
+      <line x1="142.15" y1="214.56" x2="142.15" y2="235"/>
+      <line x1="142.15" y1="214.56" x2="218.82" y2="214.56"/>
+    </g>
+    <!-- terminal dots -->
+    <g fill="#ffffff" stroke="none" opacity="0.95">
+      <circle cx="22.87"  cy="117.18" r="5.75"/>
+      <circle cx="218.56" cy="23.09"  r="5.11"/>
+      <circle cx="218.56" cy="212.56" r="5.11"/>
+    </g>
+    <!-- gate arrow (points right, into the channel) -->
+    <path d="M 111.75 109.29 L 124.21 117.43 L 111.75 125.57 Z" fill="#ffffff" stroke="none" opacity="0.95"/>
   </g>
-  <circle cx="38.3" cy="120.0" r="4.4" fill="#4dffaa"/>
-  <circle cx="202.2" cy="41.2" r="4" fill="#c0b8e8"/>
-  <circle cx="202.2" cy="198.8" r="4" fill="#c0b8e8"/>
-  <path d="M 115.4 113.5 L 124.9 120.0 L 115.4 126.5 Z" fill="#4dffaa"/>
 </svg>

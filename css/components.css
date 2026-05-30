@@ -10,19 +10,18 @@ nav {
 }
 /* FabFilter-style square logo tile */
 .logo {
-  display: flex; align-items: center; gap: 12px;
+  display: flex; align-items: center; gap: 13px;
   text-decoration: none;
 }
-.logo-tile {
-  width: 46px; height: 46px; flex-shrink: 0;
-  border-radius: 11px; overflow: hidden;
-  border: 1px solid rgba(168,159,212,0.25);
-  background: #0a0813;
-  display: block;
-  transition: border-color .2s, box-shadow .2s, transform .2s;
+/* Engraved mark — no tile/border/background; sits directly in the header */
+.logo-mark {
+  width: 38px; height: 38px; flex-shrink: 0; display: block;
+  color: var(--white);
+  opacity: 0.9;
+  transition: opacity .2s, transform .2s;
 }
-.logo-tile img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.logo:hover .logo-tile { border-color: rgba(168,159,212,0.6); box-shadow: 0 0 22px rgba(120,90,200,0.35); transform: translateY(-1px); }
+.logo-mark svg { width: 100%; height: 100%; display: block; }
+.logo:hover .logo-mark { opacity: 1; transform: translateY(-1px); }
 .logo-word {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 21px; letter-spacing: 2px; color: var(--white); text-transform: uppercase;
