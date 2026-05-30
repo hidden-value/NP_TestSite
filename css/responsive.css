@@ -40,7 +40,6 @@
 
   .section-label { font-size: 8px; letter-spacing: 3px; }
   .drop-card { padding: 32px 26px; }
-  .drop-name { font-size: 44px; }
 
   .footer-main { flex-direction: column; gap: 20px; text-align: center; align-items: center; }
   .footer-socials { flex-wrap: wrap; justify-content: center; gap: 16px; }
@@ -61,7 +60,6 @@
 @media (max-width: 380px) {
   .logo-word { display: none; } /* tile only on very small screens */
   .cs-logo { font-size: 56px; }
-  .drop-name { font-size: 38px; }
 }
 
 /* ── LANDSCAPE PHONE: tighten vertical padding ──────────────────────── */

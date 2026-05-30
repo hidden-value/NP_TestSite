@@ -37,8 +37,8 @@
 .giant-band { position: relative; overflow: hidden; background: var(--black); border-top: 1px solid rgba(168,159,212,0.08); border-bottom: 1px solid rgba(168,159,212,0.08); }
 .giant-text {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(80px, 16vw, 160px); line-height: 0.88; letter-spacing: 4px;
-  white-space: nowrap; padding: 24px 40px; display: block;
+  font-size: clamp(56px, 13vw, 160px); line-height: 0.9; letter-spacing: 3px;
+  padding: 28px 6vw; display: block; text-align: center;
   -webkit-text-stroke: 2px var(--purple); color: transparent;
   transition: color .2s, -webkit-text-stroke .2s;
 }
