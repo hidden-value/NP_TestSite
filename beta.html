@@ -38,6 +38,48 @@
       .js-reveal .reveal { opacity:1 !important; transform:none !important; transition:none; }
     }
     .nav-center a.active { color:var(--white); }
+
+    /* ── BETA KEY FIELD (page-specific) ───────────────────────────── */
+    .beta-key { padding: 64px 6vw 0; background: var(--near); }
+    .key-panel {
+      max-width: 620px; margin: 0 auto;
+      background: var(--coal); border: 1px solid rgba(168,159,212,0.28);
+      padding: 32px; position: relative;
+    }
+    .key-panel::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--pu-low), var(--neon), var(--purple), var(--pu-low));
+    }
+    .key-head { display: flex; align-items: center; gap: 11px; }
+    .key-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--neon);
+      box-shadow: 0 0 10px var(--neon); animation: pulse 1.6s ease-in-out infinite; flex-shrink: 0; }
+    .key-title { font-family: 'Bebas Neue', sans-serif; font-size: 26px; letter-spacing: 2px; color: var(--white); }
+    .key-sub { font-size: 11px; letter-spacing: 1px; line-height: 1.8; color: var(--dim); margin: 10px 0 22px; }
+    .key-sub em { color: var(--purple); font-style: normal; font-weight: 700; }
+    .key-form { display: flex; gap: 10px; flex-wrap: wrap; }
+    .key-input {
+      flex: 1; min-width: 200px; background: var(--near); border: 1px solid rgba(168,159,212,0.3);
+      padding: 13px 16px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--white); outline: none; transition: border-color .15s; cursor: crosshair;
+    }
+    .key-input::placeholder { color: var(--faint); letter-spacing: 2px; }
+    .key-input:focus { border-color: var(--purple); }
+    .key-msg { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; margin-top: 13px; min-height: 13px; display: none; }
+    .key-msg.error { display: block; color: #ff6b8a; }
+    .key-msg.ok    { display: block; color: var(--neon); }
+    .key-unlocked { display: none; margin-top: 22px; padding-top: 20px; border-top: 1px solid rgba(168,159,212,0.15); }
+    .key-unlocked.visible { display: block; }
+    .key-build { font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--neon); margin-bottom: 14px; }
+    .key-dl-row { display: flex; align-items: center; gap: 14px; padding: 14px;
+      background: var(--near); border: 1px solid rgba(168,159,212,0.15); margin-bottom: 9px; }
+    .key-dl-os { font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 1.5px; color: var(--white); flex: 1; }
+    .key-dl-btn { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--black);
+      background: var(--neon); padding: 10px 16px; text-decoration: none; font-weight: 700; }
+    .key-note { font-size: 9px; letter-spacing: 1px; line-height: 1.7; color: var(--faint); margin-top: 12px; }
+    @media (max-width: 620px) {
+      .key-form { flex-direction: column; }
+      .key-form .cta-primary { width: 100%; }
+    }
   </style>
 </head>
 <body>
@@ -114,6 +156,36 @@
     <span class="status-count-label">Slots remaining</span>
   </div>
 </div>
+
+<!-- ── HAVE A BETA KEY? ──────────────────────────────────────────────── -->
+<section class="beta-key">
+  <div class="key-panel">
+    <div class="key-head">
+      <span class="key-dot"></span>
+      <span class="key-title">Have a beta key?</span>
+    </div>
+    <p class="key-sub">Accepted testers get a key like <em>NPA-XXXX-XXXX</em> in their invite email. Enter it to unlock the download.</p>
+
+    <form class="key-form" id="key-form" autocomplete="off">
+      <input type="text" id="key-input" class="key-input" placeholder="NPA-XXXX-XXXX" maxlength="20" spellcheck="false" aria-label="Beta key">
+      <button type="submit" class="cta-primary">Unlock ★</button>
+    </form>
+    <div class="key-msg" id="key-msg"></div>
+
+    <div class="key-unlocked" id="key-unlocked">
+      <div class="key-build">★ Access granted — Tremolator V2 · build 0.9.2-beta</div>
+      <div class="key-dl-row">
+        <span class="key-dl-os">macOS</span>
+        <a class="key-dl-btn" href="#">Download</a>
+      </div>
+      <div class="key-dl-row">
+        <span class="key-dl-os">Windows</span>
+        <a class="key-dl-btn" href="#">Download</a>
+      </div>
+      <p class="key-note">Download links go live when the build is ready. Found a bug? Tell us in the beta Discord or reply to your invite email.</p>
+    </div>
+  </div>
+</section>
 
 <!-- FORM + INFO -->
 <section class="beta-form-wrap" id="beta-form-anchor">
@@ -293,5 +365,38 @@
   </div>
 </footer>
 <script src="js/main.js"></script>
+<script>
+  /* ── Beta key field (self-contained) ──────────────────────────────
+     Front-end check only — anyone can read these keys in the page source.
+     Swap for a server check before any real release. */
+  (function () {
+    var VALID_KEYS = ['NPA-TREM-2026', 'NPA-EARLY-9F3K', 'NPA-WIGGLER-4X2'];
+    var form = document.getElementById('key-form');
+    if (!form) return;
+    var input = document.getElementById('key-input');
+    var msg = document.getElementById('key-msg');
+    var unlocked = document.getElementById('key-unlocked');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var code = (input.value || '').trim().toUpperCase();
+      msg.className = 'key-msg';
+      if (!code) {
+        msg.textContent = '⚠ Enter your beta key.';
+        msg.classList.add('error');
+        return;
+      }
+      if (VALID_KEYS.indexOf(code) !== -1) {
+        msg.textContent = '✓ Key accepted — download unlocked below.';
+        msg.classList.add('ok');
+        unlocked.classList.add('visible');
+      } else {
+        msg.textContent = '✗ That key isn\'t valid. Check your invite email.';
+        msg.classList.add('error');
+        unlocked.classList.remove('visible');
+      }
+    });
+  })();
+</script>
 </body>
 </html>

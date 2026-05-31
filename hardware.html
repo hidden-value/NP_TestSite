@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hardware — null.po1nt audio</title>
+  <meta name="description" content="Hardware from null.point audio — Eurorack modules and standalone boxes, handbuilt in Sofia. Coming Q4 2026.">
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="theme-color" content="#000000">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://nullpoint.audio/hardware.html">
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="null.point audio">
+  <meta property="og:title" content="Hardware — null.po1nt audio">
+  <meta property="og:description" content="Eurorack modules and standalone boxes, handbuilt in Sofia. Coming Q4 2026.">
+  <meta property="og:url" content="https://nullpoint.audio/hardware.html">
+  <meta property="og:image" content="https://nullpoint.audio/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hardware — null.po1nt audio">
+  <meta name="twitter:description" content="Eurorack modules and standalone boxes, handbuilt in Sofia. Coming Q4 2026.">
+  <meta name="twitter:image" content="https://nullpoint.audio/og-image.png">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    .nav-center a.active { color:var(--white); }
+
+    /* ── HARDWARE: COMING SOON WINDOW (page-specific) ─────────────── */
+    .hw-frame {
+      position: relative; z-index: 1;
+      border: 1px solid rgba(168,159,212,0.35);
+      background: rgba(14,13,20,0.55); backdrop-filter: blur(4px);
+      padding: clamp(44px,8vw,84px) clamp(28px,8vw,90px);
+      max-width: 680px; width: 100%; text-align: center;
+      animation: fadein2 .6s .1s ease both;
+    }
+    /* neon corner ticks */
+    .hw-frame::before, .hw-frame::after {
+      content: ''; position: absolute; width: 16px; height: 16px; border: 2px solid var(--neon);
+    }
+    .hw-frame::before { top: -2px; left: -2px; border-right: none; border-bottom: none; }
+    .hw-frame::after  { bottom: -2px; right: -2px; border-left: none; border-top: none; }
+    .hw-badge {
+      font-size: 10px; letter-spacing: 5px; text-transform: uppercase; color: var(--neon);
+      border: 1px solid rgba(77,255,170,0.35); padding: 7px 18px; display: inline-flex; gap: 10px;
+      align-items: center; font-weight: 700; margin-bottom: 26px;
+    }
+    .hw-badge::before, .hw-badge::after { content: '★'; font-size: 8px; }
+    .hw-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(60px,14vw,128px); line-height: 0.9; letter-spacing: 3px; color: var(--white);
+    }
+    .hw-title em { color: var(--purple); font-style: normal; }
+    .hw-sub {
+      font-size: 12px; line-height: 1.95; letter-spacing: 0.5px; color: var(--dim);
+      max-width: 440px; margin: 22px auto 0; font-weight: 300;
+    }
+    .hw-sub em { color: var(--purple); font-style: normal; }
+    .hw-meta {
+      margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(168,159,212,0.15);
+      font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--faint);
+      display: flex; gap: 22px; justify-content: center; flex-wrap: wrap;
+    }
+    .hw-meta em { color: var(--neon); font-style: normal; }
+    .hw-link {
+      display: inline-flex; align-items: center; gap: 8px; margin-top: 30px;
+      font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--purple);
+      transition: gap .15s, color .15s;
+    }
+    .hw-link:hover { gap: 14px; color: var(--neon); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo" aria-label="null.point audio home">
+    <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 240 240" fill="none"><g stroke="currentColor" fill="none" stroke-linecap="round"> <g opacity="0.1"><circle cx="120" cy="120" r="144"/><circle cx="120" cy="120" r="132"/><circle cx="120" cy="120" r="122"/></g> <circle cx="120" cy="120" r="100.0" stroke-width="3.39"/> <g stroke-width="1.4" opacity="0.45"><line x1="18.305" y1="119.548" x2="221.695" y2="119.548"/><line x1="120.452" y1="18.305" x2="120.452" y2="221.695"/></g> <circle cx="121.29" cy="117.803" r="22" stroke-width="1.1" opacity="0.28"/> <circle cx="121.29" cy="117.803" r="5.65" fill="currentColor" stroke="none" opacity="0.9"/> <g opacity="0.95"> <line x1="145.351" y1="3.051" x2="145.351" y2="236.949" stroke-width="5.65"/> <line x1="131.057" y1="39.435" x2="131.057" y2="200.565" stroke-width="5.65"/> <line x1="25.576" y1="117.645" x2="128.231" y2="117.645" stroke-width="4.71"/> <line x1="144.881" y1="3.051" x2="144.881" y2="23.841" stroke-width="4.71"/> <line x1="142.525" y1="21.487" x2="220.492" y2="21.487" stroke-width="4.71"/> <line x1="144.881" y1="216.159" x2="144.881" y2="236.949" stroke-width="4.71"/> <line x1="142.517" y1="213.803" x2="220.3" y2="213.551" stroke-width="4.71"/> </g> <g fill="currentColor" stroke="none" opacity="0.95"> <circle cx="21.223" cy="117.129" r="5.847"/> <circle cx="220.23" cy="21.446" r="5.198"/> <circle cx="220.23" cy="214.129" r="5.198"/> </g> <path d="M 111.608 117.541 L 98.939 125.667 L 98.939 109.102 Z" fill="currentColor" stroke="none" opacity="0.95"/> </g></svg></span>
+    <span class="logo-word">null.<em>po1nt</em></span>
+  </a>
+  <ul class="nav-center">
+    <li><a href="index.html">Home</a></li>
+    <li><span class="nav-star">★</span></li>
+    <li><a href="about.html">About</a></li>
+    <li><span class="nav-star">★</span></li>
+    <li><a href="beta.html">Beta</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="beta.html"><button class="nav-buy">Join Beta</button></a>
+    <button class="menu-trigger" aria-label="Open menu" aria-expanded="false" aria-controls="menu-overlay">
+      menu <span class="bars"><span></span><span></span><span></span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ── FULL-SCREEN MENU OVERLAY ──────────────────────────────────────── -->
+<div class="menu-overlay" id="menu-overlay" aria-hidden="true">
+  <div class="menu-overlay-head">
+    <span class="menu-overlay-label">menu</span>
+    <button class="menu-close" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 5l14 14M19 5L5 19"/></svg>
+    </button>
+  </div>
+  <ul class="menu-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="beta.html">Beta</a></li>
+  </ul>
+  <a href="beta.html" class="menu-account">Join the Beta</a>
+  <div class="menu-overlay-footer">
+    <a href="https://instagram.com/nullpoint.audio" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://x.com/nullpointaudio" target="_blank" rel="noopener">X / Twitter</a>
+    <a href="https://youtube.com/@nullpointaudio" target="_blank" rel="noopener">YouTube</a>
+    <a href="https://discord.gg/nullpoint" target="_blank" rel="noopener">Discord</a>
+  </div>
+</div>
+
+<div class="top-ticker">
+  <div class="top-ticker-inner">
+    <span class="top-ticker-item">Hardware coming Q4 2026 <span class="top-ticker-sep">★</span></span>
+    <span class="top-ticker-item">Eurorack &amp; standalone <span class="top-ticker-sep">★</span></span>
+    <span class="top-ticker-item">Handbuilt in Sofia <span class="top-ticker-sep">★</span></span>
+    <span class="top-ticker-item">Limited production runs <span class="top-ticker-sep">★</span></span>
+    <span class="top-ticker-item">Hardware coming Q4 2026 <span class="top-ticker-sep">★</span></span>
+    <span class="top-ticker-item">Eurorack &amp; standalone <span class="top-ticker-sep">★</span></span>
+    <span class="top-ticker-item">Handbuilt in Sofia <span class="top-ticker-sep">★</span></span>
+    <span class="top-ticker-item">Limited production runs <span class="top-ticker-sep">★</span></span>
+  </div>
+</div>
+
+<!-- ── COMING SOON WINDOW ────────────────────────────────────────────── -->
+<section class="cs-hero">
+  <div class="cs-glow"></div>
+  <div class="hw-frame">
+    <span class="hw-badge">Hardware</span>
+    <div class="hw-title">COMING<br><em>SOON</em></div>
+    <p class="hw-sub">Eurorack modules and standalone boxes, built by hand here in Sofia in small runs. Still early — we'll show it when it's <em>ready</em>.</p>
+    <div class="hw-meta">
+      <span><em>Eurorack</em></span>
+      <span><em>Standalone</em></span>
+      <span>Targeting <em>Q4 2026</em></span>
+    </div>
+    <a href="beta.html" class="hw-link">Get on the list →</a>
+  </div>
+</section>
+
+<div class="bottom-ticker">
+  <div class="bottom-ticker-inner">
+    <span class="bottom-ticker-item">NULL.HW — COMING Q4 2026 <span class="bottom-ticker-dash">—</span></span>
+    <span class="bottom-ticker-item">EURORACK &amp; STANDALONE <span class="bottom-ticker-dash">—</span></span>
+    <span class="bottom-ticker-item">HANDBUILT IN SOFIA <span class="bottom-ticker-dash">—</span></span>
+    <span class="bottom-ticker-item">LIMITED RUNS <span class="bottom-ticker-dash">—</span></span>
+    <span class="bottom-ticker-item">NULL.HW — COMING Q4 2026 <span class="bottom-ticker-dash">—</span></span>
+    <span class="bottom-ticker-item">EURORACK &amp; STANDALONE <span class="bottom-ticker-dash">—</span></span>
+    <span class="bottom-ticker-item">HANDBUILT IN SOFIA <span class="bottom-ticker-dash">—</span></span>
+    <span class="bottom-ticker-item">LIMITED RUNS <span class="bottom-ticker-dash">—</span></span>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-main">
+    <div>
+      <div class="footer-logo">null.<em>po1nt</em></div>
+      <div class="footer-tagline">Handbuilt in Sofia · Launching 2026</div>
+    </div>
+    <div class="footer-socials">
+      <a href="https://instagram.com/nullpoint.audio" target="_blank" rel="noopener">Instagram</a><a href="https://x.com/nullpointaudio" target="_blank" rel="noopener">X / Twitter</a><a href="https://youtube.com/@nullpointaudio" target="_blank" rel="noopener">YouTube</a><a href="https://discord.gg/nullpoint" target="_blank" rel="noopener">Discord</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© null.point audio 2026</span>
+    <a class="footer-legal" href="about.html">About</a>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
